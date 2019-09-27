@@ -1,11 +1,17 @@
 package com.epam.learning;
 
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.time.chrono.Chronology;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
 
 public class Java8_Date {
@@ -49,6 +55,13 @@ public class Java8_Date {
 		
 		LocalDateTime ldt1 = ldt.plusDays(2);
 		System.out.println("date after 2 days: "+ ldt1);
+		
+		
+		//Chronounit is the enum provided for Localdatetime apis
+		System.out.println(Period.between(ldt.toLocalDate(), ldt1.toLocalDate()).get(ChronoUnit.DAYS));
+		
+		//find upcoming days of week
+		System.out.println(ldt.toLocalDate().with(TemporalAdjusters.next(DayOfWeek.THURSDAY)));
 	}
 
 }
