@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 /*Author: Nishant Ranjan
 Date : 24th Sep, 2019*/
 
-public class MainClass {
+public class LamdaExamples {
 
 	
 	
