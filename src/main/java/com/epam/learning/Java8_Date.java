@@ -46,6 +46,9 @@ public class Java8_Date {
 		//consversion of localdatetime to java.util.date
 		Date date = Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
 		System.out.println(date);
+		
+		LocalDateTime ldt1 = ldt.plusDays(2);
+		System.out.println("date after 2 days: "+ ldt1);
 	}
 
 }
