@@ -27,8 +27,9 @@ public class LamdaExamples {
 		System.out.println(checkLowerCase.test('a'));
 		System.out.println(checkLowerCase.test('A'));
 		
-		/* Consumer Functional Interface */
-		Consumer<String> changeToLowerCase  = str-> System.out.println(str.toLowerCase());
+		/* Consumer Functional Interface */ 
+		//Method references
+		Consumer<String> changeToLowerCase  = (System.out::println);
 		changeToLowerCase.accept("John");
 		
 		/* Function Functional Interface */
@@ -38,6 +39,10 @@ public class LamdaExamples {
 		/* Supplier Functional Interface */
 		Supplier<String> displayName = ()-> "John Doe";
 		System.out.println("Name: "+displayName.get());
+		
+		//Custom Functional INterface
+		SampleFunctionalInterface getAsciiValue = (ch) -> ((int)ch); 
+		System.out.println(getAsciiValue.calculate('%'));
 		
 
 	}
